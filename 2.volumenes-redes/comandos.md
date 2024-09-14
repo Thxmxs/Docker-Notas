@@ -1,32 +1,43 @@
-## administracion volumenes
+# Administración de volumenes
 
-# Creacion
-1.docker volume create todo-db
+**Creación**
+```sh
+docker volume create todo-db
+```
 
-# Listar volumes
-2.docker volume ls
+**Listar volumes**
+```sh
+docker volume ls
+```
 
-# Inspeccionar volume
-3.docker volume inspect todo-db
+**Inspeccionar volume**
+```sh
+docker volume inspect todo-db
+```
 
-# Borrar volumes no usados
-4.docker volume prune
+**Borrar volumes no usados**
+```sh
+docker volume prune
+```
 
-# borrar volume especifico
-5.docker volume rm volume_name
+**Borrar volume especifico**
+```sh
+docker volume rm volume_name
+```
 
-# Usar un volumen al correr un contenedor
-6.docker run -v todo-db:/etc/todos getting-started
+**Usar un volumen al correr un contenedor**
+```sh
+docker run -v todo-db:/etc/todos getting-started
+```
 
-## Tipos de volumenes
+**Tipos de volumes**
 
-hay 3 tipos de volumenes
+1. **named volumes**: es el mas utilizado le asignamos el nombre a un volume
+2. **bind volumes**: sirve para enlazar el filesystem local con el de docker
+3. **anonymous volume**: docker le asigna un nombre random al volume
 
-1.named volumes: es el mas utilizado le asignamos el nombre a un volumne
-2.bind volumes: sirve para enlazar el filesystem local con el de docker
-3.anonymous volume: docker le asigna un nombre random al volume
-
-## Creacion mariadb con un volume
+**Creación mariadb con un volume**
+```sh
 --volume nombre_volume:fileSystemContenedor (ver doc image)
 
  docker container run \
@@ -38,34 +49,42 @@ hay 3 tipos de volumenes
 --env MARIADB_DATABASE=world-db \
 --volume world-db:/var/lib/mysql \
 mariadb:jammy
+```
 
-## Creacion contenedor phpmyadmin
+**Creación contenedor phpmyadmin**
 
+```sh
 docker container run \
 --name phpmyadmin \
 -dp 8080:80 \
 -e PMA_ARBITRARY=1 \
 phpmyadmin:5.2.0-apache
+```
 
+# Administración de networks
 
-## administracion networks
-
-# Ver comandos network
-docker network
-
-# Crear una nueva red
+**Crear una nueva red**
+```sh
 docker network create todo-app
+```
 
-# Listar redes
+**Listar redes**
+```sh
 docker network ls
-
-# Borrar redes sin utilizar
+ ```
+ 
+**Borrar redes sin utilizar**
+```sh
 docker network prune
+ ```
 
-# conectar contenedores a una network
+**conectar contenedores a una network**
+```sh
 docker network connect nombre_red id_contenedor
+ ```
 
-# Levantar container con la red desde el inicio
+**Levantar container con la red desde el inicio**
+```sh
 docker container run \
 -dp 3306:3306 \
 --name world-db \
@@ -83,16 +102,18 @@ docker container run \
 -e PMA_ARBITRARY=1 \
 --network world-app \
 phpmyadmin:5.2.0-apache
+ ```
 
 
-## Bind volumes
+**Bind volumes**
 Nos permite conectar nuestro filesystem con el filesystem del container, y reflejar los cambios que se hagan en local
 dentro de el container y viceversa
 
-# test con app de nest
+**Test con app de nest**
+```sh
 -w es el working directory
 sh -c abre una terminal interactiva al final de la creacion y ejecuta los comandos
- -v "$(pwd)":/app monta los archivos actuales en la ruta /app dentro del container
+-v "$(pwd)":/app monta los archivos actuales en la ruta /app dentro del container
 
 docker container run \
  --name nest-app \
@@ -101,7 +122,11 @@ docker container run \
  -v "$(pwd)":/app \
  node:18-alpine3.20 \
  sh -c "yarn install && yarn start:dev"
+  ```
 
- # terminal interactiva
+**Abrir terminal interactiva dentro del contenedor**
+ ```sh
  docker exec -it <container-id> /bin_/sh
+ 
+  ```
 
