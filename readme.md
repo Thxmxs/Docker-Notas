@@ -4,7 +4,7 @@ Este repositorio contiene apuntes y ejemplos relacionados con Docker. Organizado
 
 ## Estructura del repositorio
 
-### 1. **bases/comandos.md**
+### 1. **bases**
    - Comandos básicos para trabajar con Docker, incluyendo:
      - Descargar imágenes desde DockerHub.
      - Ejecutar y gestionar contenedores.
@@ -12,7 +12,7 @@ Este repositorio contiene apuntes y ejemplos relacionados con Docker. Organizado
      - Examinar logs y ejecutar comandos dentro de contenedores.
      - Uso de variables de entorno.
 
-### 2. **volumenes-redes/comandos.md**
+### 2. **volumenes-redes**
    - Comandos relacionados con la creación y gestión de volúmenes y redes en Docker.
    -  persistir datos y conectar contenedores entre sí.
 
@@ -29,7 +29,7 @@ Este repositorio contiene apuntes y ejemplos relacionados con Docker. Organizado
    - Ejemplo de creación de imagen Docker con el proyecto `cron-ticker`.
    - **Proyecto cron-app -> ver Dockerfile**
 
-### 5. **multistage-build/comandos.md**
+### 5. **multistage-build**
    - Información sobre cómo realizar un build multistage en Docker Compose y construir imágenes multiplataforma.
    - Optimización de imágenes Docker y despliegues en diferentes entornos.
    - **ver proyectos teslo-shop y cron-app**
