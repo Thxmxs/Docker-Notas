@@ -1,6 +1,6 @@
 # Docker: notas y ejemplos
 
-Este repositorio contiene apuntes y ejemplos relacionados con Docker. Organizado en diferentes carpetas, cubre desde comandos básicos hasta configuraciones más avanzadas como multistage builds, Docker Compose, y GitHub Actions.
+Este repositorio contiene apuntes y ejemplos relacionados con Docker. Organizado en diferentes carpetas, desde comandos básicos hasta más avanzadas como multistage builds, Docker Compose, y GitHub Actions.
 
 ## Estructura del repositorio
 
