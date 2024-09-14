@@ -1,6 +1,7 @@
-Se busca que mediante un simple comando de git se dispare la creacion de una imagen y llevarla a dockerhub
+# Github actions
+Se busca que mediante un simple comando de git se dispare la creacion de una imagen y se suba a dockerhub
 
-# Configurar ambiente en github - gh actions
+**Configurar ambiente en github - gh actions**
 
 1. crear repositorio
 2. crear 2 secretos en actions secrets de github, docker user y docker password con el token de acceso de docker
@@ -9,10 +10,11 @@ Se busca que mediante un simple comando de git se dispare la creacion de una ima
 5. añadir versionamiento semantico
 6. testear
 
-# para el versionamiento semantico se puede utilizar
+**Para el versionamiento semantico se puede utilizar**
 
 https://github.com/marketplace/actions/git-semantic-version?version=v4.0.3
 
+```sh
 se configura de la siguiente forma:
 - name: Git Semantic Version
       uses: PaulHatch/semantic-version@v4.0.3
@@ -33,3 +35,4 @@ y se utiliza:
 
 
 VER docker-image.yml como ejemplo
+```
